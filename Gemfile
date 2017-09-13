@@ -12,6 +12,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'foundation-rails'
 
+gem "octokit", "~> 4.0"
+
+gem 'dotenv'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
