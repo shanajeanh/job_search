@@ -17,24 +17,14 @@ feature 'user can add events' do
 
       expect(page).to have_content 'Event added successfully'
       expect(page).to have_content 'Hardison Hackers Co'
-      expect(page).to have_content 'hardison@leverage.com'
     end
 
     scenario 'user cannot add an event without a name' do
       visit new_event_path
-      fill_in 'emails', with: 'hardison@leverage.com'
       click_button 'Save'
 
       expect(page).to have_content 'You must add an event name'
     end
 
-    scenario 'user can add an event without a list of emails to follow up' do
-      visit new_event_path
-      fill_in 'Name', with: 'Hardison Hackers Co'
-      click_button 'Save'
-
-      expect(page).to have_content 'Event added successfully'
-      expect(page).to have_content 'Hardison Hackers Co'
-    end
   end
 end
